@@ -1,2 +1,5 @@
 .DS_Store
+<<<<<<< HEAD
 .DS_Store
+=======
+>>>>>>> ecdb303 (Added .DS_Store to .gitignore)

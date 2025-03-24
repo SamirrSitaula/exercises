@@ -1,0 +1,79 @@
+Project Report: IMDb Most Popular Movies Scraping
+
+Introduction
+
+This project focuses on web scraping IMDb to extract data on the most popular movies. The extracted data includes movie title, IMDb page URL, description, ratings, genre, and duration. The primary objective is to collect and preprocess this data for further analysis.
+
+Methodology
+
+1. Web Scraping Setup
+
+Used Python's requests library to send HTTP requests to IMDb.
+
+Employed BeautifulSoup to parse and extract data from the HTML content of the IMDb Most Popular Movies page.
+
+Extracted structured JSON-LD data embedded within <script> tags.
+
+2. Data Extraction
+
+i. Identified the key elements within the extracted JSON-LD structure.
+
+ii. Retrieved movie details including:
+
+iii. Title
+
+iv. URL
+
+v. Description
+
+vi. Aggregate Ratings (Best, Worst, and Current Rating)
+
+vii. Genre
+
+viii. Duration
+
+--> Stored the extracted information into Python lists.
+
+3. Data Storage
+
+i. Converted the extracted lists into a Pandas DataFrame.
+
+ii. Saved the cleaned data into a CSV file (most_popular_movies.csv) for future use.
+
+Data Cleaning & Preprocessing
+
+i. Handling Missing Values:
+
+Replaced missing values with 'N/A' for text-based attributes.
+
+Assigned default values for numerical ratings when unavailable.
+
+ii. Duplicate Removal:
+
+ Checked for and removed any duplicate movie entries.
+
+iii. Data Formatting:
+
+Converted durations from ISO format to a more readable format.
+
+Standardized rating values for consistency.
+
+Challenges Faced
+
+Dynamic Content Loading: IMDb's website structures movie details in JSON-LD format within <script> tags, requiring specialized parsing.
+
+Missing Data Issues: Some movies had incomplete information (e.g., missing descriptions or ratings), which needed handling strategies.
+
+Data Structure Variability: The structure of IMDb's JSON data occasionally varied, requiring additional checks and fallbacks.
+
+Conclusion
+
+This project successfully extracted, cleaned, and stored data on the most popular movies from IMDb. The cleaned dataset is now ready for further analysis, including visualization or machine learning applications. Future improvements could involve automating the scraping process and integrating APIs for real-time updates.
+
+Future Work
+
+Enhance error handling for dynamic page structure changes.
+
+Implement automation for periodic data updates.
+
+Expand the dataset to include additional attributes like user reviews and release year.
